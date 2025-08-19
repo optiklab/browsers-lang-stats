@@ -20,18 +20,24 @@ jobs:
           repository: mozilla/gecko-dev
           path: gecko-dev
 
+      - uses: actions/checkout@v2
+        with:
+          repository: chromium/chromium
+          path: chromium
+
       - run: npm install -g mustache
 
       - name: Build
         run: |
           mkdir build
           dev/build-data ./gecko-dev > build/data.json
+          dev/build-data ./chromium >> build/data.json
           cat build/data.json
-          mustache build/data.json index.mustache > build/index.html
-          cat build/index.html
+          mustache build/data.json browsers-lang-stats.mustache > build/browsers-lang-stats.html
+          cat build/browsers-lang-stats.html
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.8
+        uses: optiklab/github-pages-deploy-action@4.1.8
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
           branch: gh-pages # The branch the action should deploy to.

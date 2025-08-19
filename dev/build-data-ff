@@ -23,7 +23,7 @@ echo_footer()
 
 echo_data_header()
 {
-  echo '"lang": ['
+  echo '"langFf": ['
 }
 
 echo_data_footer()
@@ -49,10 +49,10 @@ echo_title_date()
 
 cd $GECKO_DEV
 
-echo_header
+#echo_header
 
-echo_meta_date "$(date -u --iso-8601=seconds)" ','
-echo_title_date "$(date +'%b %Y')" ','
+#echo_meta_date "$(date -u --iso-8601=seconds)" ','
+#echo_title_date "$(date +'%b %Y')" ','
 
 echo_data_header
 
