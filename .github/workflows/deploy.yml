@@ -30,9 +30,6 @@ jobs:
       - name: Build
         run: |
           mkdir build
-          cd dev
-          chmod +x build-data
-          cd ..
           dev/build-data-chrm ./chromium > build/data.json
           dev/build-data-ff ./firefox >> build/data.json
           cat build/data.json
