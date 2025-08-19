@@ -28,7 +28,7 @@ echo_data_header()
 
 echo_data_footer()
 {
-  echo ']'
+  echo '],'
 }
 
 # print a row for a diagram
