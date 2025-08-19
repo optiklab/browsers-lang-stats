@@ -31,6 +31,6 @@ mustache data.json browsers-lang-stats.mustache > browsers-lang-stats.html
 
 # Links
 
-[mozilla-firefox/firefox]: https://github.com/mozilla-firefox/firefox
-[chromium/chromium]: https://github.com/chromium/chromium
-[gh-pages]: https://optiklab.github.io/browsers-lang-stats.html
+[mozilla-firefox/firefox](https://github.com/mozilla-firefox/firefox)
+[chromium/chromium](https://github.com/chromium/chromium)
+[gh-pages](https://optiklab.github.io/browsers-lang-stats.html)
