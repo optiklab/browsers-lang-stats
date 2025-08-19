@@ -11,16 +11,10 @@ the exact build time.
 
 # Build stat
 
-Build json document with the language details for FireFox:
-
+Build json document with the language details for Chromium and FireFox:
 ```
-dev/build-data ~/gecko-dev > dataFf.json
-```
-
-Build json document with the language details for FireFox:
-
-```
-dev/build-data ~/chromium > dataChrm.json
+dev/build-data ./gecko-dev > build/data.json
+dev/build-data ./chromium >> build/data.json
 ```
 
 # Build pie charts
@@ -28,7 +22,7 @@ dev/build-data ~/chromium > dataChrm.json
 Expand mustache template:
 
 ```
-mustache dataFf.json dataChrm.json index.mustache > index.html
+mustache data.json index.mustache > index.html
 ```
 
 [mozilla/gecko-dev]: https://github.com/mozilla/gecko-dev
