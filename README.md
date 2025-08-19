@@ -25,6 +25,12 @@ Expand mustache template:
 mustache data.json browsers-lang-stats.mustache > browsers-lang-stats.html
 ```
 
+# Result
+
+![1](https://github.com/optiklab/browsers-lang-stats/blob/main/images/browser-stat-example.png)
+
+# Links
+
 [mozilla-firefox/firefox]: https://github.com/mozilla-firefox/firefox
 [chromium/chromium]: https://github.com/chromium/chromium
 [gh-pages]: https://optiklab.github.io/browsers-lang-stats.html
