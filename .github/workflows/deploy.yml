@@ -37,8 +37,8 @@ jobs:
           dev/build-data-chrm ./chromium > build/data.json
           dev/build-data-ff ./firefox >> build/data.json
           cat build/data.json
-          mustache build/data.json browsers-lang-stats.mustache > build/browsers-lang-stats.html
-          cat build/browsers-lang-stats.html
+          mustache build/data.json index.mustache > build/index.html
+          cat build/index.html
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.8
