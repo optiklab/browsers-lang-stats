@@ -4,7 +4,7 @@ Languages distributions in Firefox and Chromium? You can see the chart [here][gh
 
 Repository contains scripts collecting the language statistics for
 [mozilla/gecko-dev] and [chromium/chromium] repositories. Gathered data then assembled into a pie charts 
-`index.mustache`.
+`browsers-lang-stats.mustache`.
 
 Page is updated weekly with a Travis Cron job. See the `date` meta tag for
 the exact build time.
@@ -22,7 +22,7 @@ dev/build-data ./chromium >> build/data.json
 Expand mustache template:
 
 ```
-mustache data.json index.mustache > index.html
+mustache data.json browsers-lang-stats.mustache > browsers-lang-stats.html
 ```
 
 [mozilla/gecko-dev]: https://github.com/mozilla/gecko-dev
