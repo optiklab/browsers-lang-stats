@@ -30,6 +30,9 @@ jobs:
       - name: Build
         run: |
           mkdir build
+          cd dev
+          chmod +x build-data
+          cd ..
           dev/build-data ./firefox > build/data.json
           dev/build-data ./chromium >> build/data.json
           cat build/data.json
@@ -40,5 +43,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.8
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          branch: main # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
