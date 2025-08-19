@@ -72,7 +72,7 @@ echo_data_line 'Python' $(git_loc '*.py') ','
 echo_data_line 'Java' $(git_loc '*.java') ','
 echo_data_line 'Assembly' $(git_loc '*.asm')
 
-echo_data_footer
+#echo_data_footer
 
 #echo_footer
 

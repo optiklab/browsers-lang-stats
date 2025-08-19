@@ -33,8 +33,8 @@ jobs:
           cd dev
           chmod +x build-data
           cd ..
-          dev/build-data ./firefox > build/data.json
-          dev/build-data ./chromium >> build/data.json
+          dev/build-data-chrm ./chromium > build/data.json
+          dev/build-data-ff ./firefox >> build/data.json
           cat build/data.json
           mustache build/data.json browsers-lang-stats.mustache > build/browsers-lang-stats.html
           cat build/browsers-lang-stats.html
