@@ -1,18 +1,18 @@
 {
-"meta_date": "2025-08-19T23:42:19+00:00",
+"meta_date": "2025-08-19T23:54:21+00:00",
 "title_date": "Aug 2025",
 "langChrm": [
 {"name":"Rust", "loc":1741342},
-{"name":"H", "loc":6618541},
+{"name":"H", "loc":6618548},
 {"name":"C", "loc":867337},
-{"name":"C++, Hxx", "loc":20749388},
-{"name":"ObjC", "loc":1347039},
-{"name":"Build files (gn, gni)", "loc":789803},
+{"name":"C++, Hxx", "loc":20749269},
+{"name":"ObjC", "loc":1347036},
+{"name":"Build files (gn, gni)", "loc":789805},
 {"name":"TypeScript", "loc":1381331},
 {"name":"JavaScript", "loc":3190478},
 {"name":"HTML", "loc":5526514},
 {"name":"Python", "loc":1287266},
-{"name":"Java", "loc":2417630},
+{"name":"Java", "loc":2417621},
 {"name":"Assembly", "loc":6212}
 ],
 "langFf": [
