@@ -1,8 +1,8 @@
 #!/bin/sh
 
-GECKO_DEV=$1
+FIREFOX=$1
 
-[ -z $GECKO_DEV ] && { echo 'Missing path to repo argument'; exit 1; }
+[ -z $FIREFOX ] && { echo 'Missing path to repo argument'; exit 1; }
 
 # count lines of code by file extension
 git_loc()
@@ -47,7 +47,7 @@ echo_title_date()
   echo "\"title_date\": \"$1\"$2"
 }
 
-cd $GECKO_DEV
+cd $FIREFOX
 
 #echo_header
 
