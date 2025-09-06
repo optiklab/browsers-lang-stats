@@ -31,22 +31,6 @@ echo_data_footer()
   echo '],'
 }
 
-echo_markdown_header()
-{
-  echo '"recentMarkdown": ['
-}
-
-echo_markdown_footer()
-{
-  echo ']'
-}
-
-# print a markdown file entry
-echo_markdown_line()
-{
-  echo "{\"file\":\"$1\", \"lastModified\":\"$2\"}$3"
-}
-
 # print a row for a diagram
 echo_data_line()
 {
@@ -90,7 +74,18 @@ echo_data_line 'Assembly' $(git_loc '*.asm')
 
 echo_data_footer
 
+echo_markdown_header()
+{
+  echo '"recentMarkdown": ['
+}
+
 echo_markdown_header
+
+# print a markdown file entry
+echo_markdown_line()
+{
+  echo "{\"file\":\"$1\", \"lastModified\":\"$2\"}$3"
+}
 
 # Get 25 most recently updated markdown files with their last modification date
 # Create temporary file to store results
@@ -117,6 +112,11 @@ while IFS='|' read -r date file; do
 done < "$temp_file"
 
 rm "$temp_file"
+
+echo_markdown_footer()
+{
+  echo ']'
+}
 
 echo_markdown_footer
 
