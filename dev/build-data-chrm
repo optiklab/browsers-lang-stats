@@ -92,14 +92,20 @@ echo_data_footer
 
 echo_markdown_header
 
-# Get 50 most recently updated markdown files with their last modification date
+# Get all markdown files that were modified in the available git history
 # Create temporary file to store results
 temp_file=$(mktemp)
-git ls-files '*.md' | \
-  head -n 100 | \
-  xargs -I {} sh -c 'echo "$(git log -1 --format="%ct" -- "$1")|$1"' _ {} 2>/dev/null | \
-  sort -nr | \
-  head -n 50 > "$temp_file"
+
+# Get all markdown files that exist and have commit history
+git ls-files '*.md' | while read file; do
+  if [ -f "$file" ]; then
+    # Get the commit timestamp for this specific file
+    timestamp=$(git log -1 --format="%ct" --follow -- "$file" 2>/dev/null)
+    if [ -n "$timestamp" ] && [ "$timestamp" -gt 0 ] 2>/dev/null; then
+      echo "$timestamp|$file"
+    fi
+  fi
+done | sort -nr > "$temp_file"
 
 # Process the results and add appropriate commas
 total_lines=$(wc -l < "$temp_file")

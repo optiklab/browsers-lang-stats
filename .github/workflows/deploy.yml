@@ -24,6 +24,7 @@ jobs:
         with:
           repository: chromium/chromium
           path: chromium
+          fetch-depth: 1000  # Get last 1000 commits for better markdown file history
 
       - run: npm install -g mustache
 
