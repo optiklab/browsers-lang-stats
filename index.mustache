@@ -68,5 +68,31 @@
       <p><a href="https://github.com/chromium/chromium">chromium/chromium</a> repository statistics on {{title_date}}</p>
     </div>
     <div id="piechartchrm" style="width: 900px; height: 500px;"></div>
+    
+    <div style="margin-left: 150px; margin-top: 50px;">
+      <h2>Recently Updated Markdown Files in Chromium</h2>
+      <p>25 most recently updated Markdown files in the <a href="https://github.com/chromium/chromium">chromium/chromium</a> repository</p>
+      
+      <div style="max-width: 900px;">
+        <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+          <thead>
+            <tr style="background-color: #f0f0f0;">
+              <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">File Path</th>
+              <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Last Modified</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#recentMarkdown}}
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px; font-family: monospace; font-size: 12px;">
+                <a href="https://github.com/chromium/chromium/blob/main/{{file}}" target="_blank" style="color: #0066cc; text-decoration: none;">{{file}}</a>
+              </td>
+              <td style="border: 1px solid #ddd; padding: 8px; font-size: 12px;">{{lastModified}}</td>
+            </tr>
+            {{/recentMarkdown}}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>

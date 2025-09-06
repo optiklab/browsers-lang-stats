@@ -31,6 +31,22 @@ echo_data_footer()
   echo '],'
 }
 
+echo_markdown_header()
+{
+  echo '"recentMarkdown": ['
+}
+
+echo_markdown_footer()
+{
+  echo ']'
+}
+
+# print a markdown file entry
+echo_markdown_line()
+{
+  echo "{\"file\":\"$1\", \"lastModified\":\"$2\"}$3"
+}
+
 # print a row for a diagram
 echo_data_line()
 {
@@ -74,6 +90,36 @@ echo_data_line 'Assembly' $(git_loc '*.asm')
 
 echo_data_footer
 
-#echo_footer
+echo_markdown_header
+
+# Get 25 most recently updated markdown files with their last modification date
+# Create temporary file to store results
+temp_file=$(mktemp)
+git ls-files '*.md' | \
+  head -n 100 | \
+  xargs -I {} git log -1 --format="%ai|{}" -- {} 2>/dev/null | \
+  sort -r | \
+  head -n 25 > "$temp_file"
+
+# Process the results and add appropriate commas
+total_lines=$(wc -l < "$temp_file")
+current_line=0
+
+while IFS='|' read -r date file; do
+  if [ -n "$file" ]; then
+    current_line=$((current_line + 1))
+    if [ $current_line -eq $total_lines ]; then
+      echo_markdown_line "$file" "$date"
+    else
+      echo_markdown_line "$file" "$date" ','
+    fi
+  fi
+done < "$temp_file"
+
+rm "$temp_file"
+
+echo_markdown_footer
+
+echo_footer
 
 cd - > /dev/null
