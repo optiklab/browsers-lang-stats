@@ -49,6 +49,7 @@ echo_title_date()
 
 cd $FIREFOX
 
+# Don't output header - the chromium script already did
 #echo_header
 
 #echo_meta_date "$(date -u --iso-8601=seconds)" ','
