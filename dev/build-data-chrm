@@ -92,14 +92,14 @@ echo_data_footer
 
 echo_markdown_header
 
-# Get 25 most recently updated markdown files with their last modification date
+# Get 50 most recently updated markdown files with their last modification date
 # Create temporary file to store results
 temp_file=$(mktemp)
 git ls-files '*.md' | \
   head -n 100 | \
   xargs -I {} git log -1 --format="%ai|{}" -- {} 2>/dev/null | \
   sort -r | \
-  head -n 25 > "$temp_file"
+  head -n 50 > "$temp_file"
 
 # Process the results and add appropriate commas
 total_lines=$(wc -l < "$temp_file")
