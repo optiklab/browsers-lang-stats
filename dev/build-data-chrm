@@ -97,16 +97,18 @@ echo_markdown_header
 temp_file=$(mktemp)
 git ls-files '*.md' | \
   head -n 100 | \
-  xargs -I {} git log -1 --format="%ai|{}" -- {} 2>/dev/null | \
-  sort -r | \
+  xargs -I {} sh -c 'echo "$(git log -1 --format="%ct" -- "$1")|$1"' _ {} 2>/dev/null | \
+  sort -nr | \
   head -n 50 > "$temp_file"
 
 # Process the results and add appropriate commas
 total_lines=$(wc -l < "$temp_file")
 current_line=0
 
-while IFS='|' read -r date file; do
-  if [ -n "$file" ]; then
+while IFS='|' read -r timestamp file; do
+  if [ -n "$file" ] && [ -n "$timestamp" ]; then
+    # Convert timestamp to readable date format
+    date=$(date -d "@$timestamp" "+%Y-%m-%d %H:%M:%S")
     current_line=$((current_line + 1))
     if [ $current_line -eq $total_lines ]; then
       echo_markdown_line "$file" "$date"
