@@ -90,43 +90,43 @@ echo_data_line 'Assembly' $(git_loc '*.asm')
 
 echo_data_footer
 
-echo_markdown_header
+#echo_markdown_header
 
 # Get all markdown files that were modified in the available git history
 # Create temporary file to store results
-temp_file=$(mktemp)
+# temp_file=$(mktemp)
 
 # Get all markdown files that exist and have commit history
-git ls-files '*.md' | while read file; do
-  if [ -f "$file" ]; then
-    # Get the commit timestamp for this specific file
-    timestamp=$(git log -1 --format="%ct" --follow -- "$file" 2>/dev/null)
-    if [ -n "$timestamp" ] && [ "$timestamp" -gt 0 ] 2>/dev/null; then
-      echo "$timestamp|$file"
-    fi
-  fi
-done | sort -nr > "$temp_file"
+# git ls-files '*.md' | while read file; do
+#  if [ -f "$file" ]; then
+#    # Get the commit timestamp for this specific file
+#    timestamp=$(git log -1 --format="%ct" --follow -- "$file" 2>/dev/null)
+#    if [ -n "$timestamp" ] && [ "$timestamp" -gt 0 ] 2>/dev/null; then
+#      echo "$timestamp|$file"
+#    fi
+#  fi
+# done | sort -nr > "$temp_file"
 
 # Process the results and add appropriate commas
-total_lines=$(wc -l < "$temp_file")
-current_line=0
+#total_lines=$(wc -l < "$temp_file")
+#current_line=0
 
-while IFS='|' read -r timestamp file; do
-  if [ -n "$file" ] && [ -n "$timestamp" ]; then
-    # Convert timestamp to readable date format
-    date=$(date -d "@$timestamp" "+%Y-%m-%d %H:%M:%S")
-    current_line=$((current_line + 1))
-    if [ $current_line -eq $total_lines ]; then
-      echo_markdown_line "$file" "$date"
-    else
-      echo_markdown_line "$file" "$date" ','
-    fi
-  fi
-done < "$temp_file"
+#while IFS='|' read -r timestamp file; do
+#  if [ -n "$file" ] && [ -n "$timestamp" ]; then
+#    # Convert timestamp to readable date format
+#    date=$(date -d "@$timestamp" "+%Y-%m-%d %H:%M:%S")
+#    current_line=$((current_line + 1))
+#    if [ $current_line -eq $total_lines ]; then
+#      echo_markdown_line "$file" "$date"
+#    else
+#      echo_markdown_line "$file" "$date" ','
+#    fi
+#  fi
+#done < "$temp_file"
 
-rm "$temp_file"
+#rm "$temp_file"
 
-echo_markdown_footer
+#echo_markdown_footer
 
 # Don't close the JSON here - let the Firefox script close it
 # echo_footer
