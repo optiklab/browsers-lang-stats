@@ -1,5 +1,5 @@
 {
-"meta_date": "2026-02-15T22:45:05+00:00",
+"meta_date": "2026-02-22T22:44:02+00:00",
 "title_date": "Feb 2026",
 "langChrm": [
 {"name":"Rust", "loc":2231071},
@@ -16,13 +16,13 @@
 {"name":"Assembly", "loc":5836}
 ],
 "langFf": [
-{"name":"Rust", "loc":5397985},
-{"name":"C", "loc":5490989},
-{"name":"C++", "loc":10676759},
-{"name":"JavaScript", "loc":10723715},
-{"name":"HTML", "loc":6469618},
-{"name":"Python", "loc":1932923},
-{"name":"Java", "loc":287259},
+{"name":"Rust", "loc":5420249},
+{"name":"C", "loc":5491893},
+{"name":"C++", "loc":10680068},
+{"name":"JavaScript", "loc":10738533},
+{"name":"HTML", "loc":6476806},
+{"name":"Python", "loc":1934779},
+{"name":"Java", "loc":287398},
 {"name":"Assembly", "loc":294696}
 ]
 }
