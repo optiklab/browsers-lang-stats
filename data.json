@@ -1,28 +1,28 @@
 {
-"meta_date": "2026-06-14T23:40:23+00:00",
+"meta_date": "2026-06-21T23:46:16+00:00",
 "title_date": "Jun 2026",
 "langChrm": [
-{"name":"Rust", "loc":2777515},
-{"name":"H", "loc":6869830},
-{"name":"C", "loc":853250},
-{"name":"C++, Hxx", "loc":22130976},
-{"name":"ObjC", "loc":1575763},
-{"name":"Build files (gn, gni)", "loc":893460},
-{"name":"TypeScript", "loc":1549956},
-{"name":"JavaScript", "loc":3134235},
-{"name":"HTML", "loc":5884488},
-{"name":"Python", "loc":1379033},
-{"name":"Java", "loc":2800921},
+{"name":"Rust", "loc":2778184},
+{"name":"H", "loc":6878883},
+{"name":"C", "loc":853272},
+{"name":"C++, Hxx", "loc":22187548},
+{"name":"ObjC", "loc":1582589},
+{"name":"Build files (gn, gni)", "loc":898362},
+{"name":"TypeScript", "loc":1556761},
+{"name":"JavaScript", "loc":3134482},
+{"name":"HTML", "loc":5899137},
+{"name":"Python", "loc":1382007},
+{"name":"Java", "loc":2815132},
 {"name":"Assembly", "loc":8228}
 ],
 "langFf": [
-{"name":"Rust", "loc":5933677},
-{"name":"C", "loc":5613514},
-{"name":"C++", "loc":10901322},
-{"name":"JavaScript", "loc":13815787},
-{"name":"HTML", "loc":6701300},
-{"name":"Python", "loc":2144726},
-{"name":"Java", "loc":145909},
-{"name":"Assembly", "loc":296354}
+{"name":"Rust", "loc":5938192},
+{"name":"C", "loc":5617081},
+{"name":"C++", "loc":10914634},
+{"name":"JavaScript", "loc":13836892},
+{"name":"HTML", "loc":6713880},
+{"name":"Python", "loc":2151210},
+{"name":"Java", "loc":145916},
+{"name":"Assembly", "loc":296361}
 ]
 }
